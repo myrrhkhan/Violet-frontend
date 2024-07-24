@@ -1,5 +1,5 @@
 <script>
-	import DrawConvert from './DrawConvert.svelte';
+	import Excali from '$lib/excalidraw/AsyncExcalidraw.svelte';
 </script>
 
 <svelte:head>
@@ -11,7 +11,7 @@
 	<h1>Violet: Convert Handwriting to Text</h1>
 </header>
 
-<DrawConvert />
+<Excali />
 
 <style>
 	h1 {
