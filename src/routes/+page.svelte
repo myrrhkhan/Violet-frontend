@@ -11,7 +11,7 @@
 	<h1>Violet: Convert Handwriting to Text</h1>
 </header>
 
-<!-- <DrawConvert /> -->
+<DrawConvert />
 
 <style>
 	h1 {

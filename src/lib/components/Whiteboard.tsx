@@ -1,7 +1,7 @@
 import React from 'react';
 import { Excalidraw } from '@excalidraw/excalidraw';
 
-export default function Whiteboard() {
+function Whiteboard() {
 	return (
 		<>
 			<h1 style={{ textAlign: 'center' }}>Excalidraw Example</h1>
@@ -11,3 +11,5 @@ export default function Whiteboard() {
 		</>
 	);
 }
+
+export default Whiteboard;

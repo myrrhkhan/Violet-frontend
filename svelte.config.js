@@ -1,4 +1,5 @@
 import adapter from '@sveltejs/adapter-auto';
+import preprocessReact from 'svelte-preprocess-react/preprocessReact';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,4 +16,6 @@ const config = {
 	}
 };
 
-export default config;
+export default {
+	preprocess: preprocessReact()
+};
