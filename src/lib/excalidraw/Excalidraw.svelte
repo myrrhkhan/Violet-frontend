@@ -15,12 +15,21 @@
 	export let initialData: ExcalidrawInitialDataState = {};
 	export let excalidrawAPI: ExcalidrawImperativeAPI;
 
+	// Excalidraw has its own internal API that it uses (which we can use in React)
+	// However, because we're creating a wrapper for Excalidraw element, we need to grant
+	// Svelte access to Excalidraw's own API and capture it as soon as the element has been initialized
 	function setAPI(api: ExcalidrawImperativeAPI) {
 		// console.log("SET API");
 		excalidrawAPI = api;
 		dispatcher('init');
 	}
 
+	/**
+	 * deploy an event, in form of map, type -> details of event
+	 * on init, no details
+	 * on change, elements and appstate are details
+	 * on blob, blob is detail
+	 */
 	const dispatcher = createEventDispatcher<{
 		init: void;
 		change: { elements: ExcalidrawElement[]; state: AppState };
@@ -36,6 +45,7 @@
 	]);
 </script>
 
+<!-- ref: when element mounts, sets API -->
 <ReactComponent
 	{onChange}
 	ref={setAPI}
