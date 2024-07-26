@@ -19,5 +19,5 @@
 		/>
 	{/await}
 {:else}
-	Not browser
+	<p>Not browser</p>
 {/if}
